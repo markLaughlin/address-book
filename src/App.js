@@ -9,12 +9,19 @@ class App extends Component{
     super(props)
     this.state = {
       contacts: [
-        {name: "Joe", number: "344-5678"},
+       /*  {name: "Joe", number: "344-5678"},
         {name: "Sally", number: "344-5678"},
         {name: "Sarah", number: "344-5678"},
-        {name: "Ted", number: "234-9876"}
+        {name: "Ted", number: "234-9876"} */
       ]
     }
+  }
+
+  addContact = (name, number) => {
+    console.log("addContact method ran in App component");
+    let currentArray = this.state.contacts;
+    currentArray.push({name: name, number: number})
+    this.setState({contacts: currentArray})
   }
 
   render(){
@@ -22,7 +29,7 @@ class App extends Component{
       <div className="App">
         <h1>Address Book</h1>
         <ContactList contacts={this.state.contacts}/>
-        <ContactForm/>
+        <ContactForm onAddContact={this.addContact}/>
       </div>
     );
   }
