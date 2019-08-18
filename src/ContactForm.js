@@ -8,6 +8,9 @@ export default class Contact extends Component{
         let name = e.target.nameInput.value;
         let number = e.target.numberInput.value;
         this.props.onAddContact(name, number)
+    }
+
+    reset(){
         window.location.reload();
     }
 
@@ -25,9 +28,9 @@ export default class Contact extends Component{
                     <br/>
 
                     <button type="Submit">Add Contact</button>
-
                 </form>
                 <br/>
+                <button onClick={this.reset}>Reset</button>
             </div>
         )
     }

@@ -27,7 +27,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <h1>Mark's Address Book</h1>
+        <h1>Mark Laughlin's Address Book</h1>
         <ContactList contacts={this.state.contacts}/>
         <ContactForm onAddContact={this.addContact}/>
       </div>
